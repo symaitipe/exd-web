@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*-------------------------------------------------- Navbar -------------------------------------------------*/
+.navbar {
+  width: 100%;
+  height: 8vh;
+  background: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand span {
+  padding-left: 0.5rem;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.navbar-menu li {
+  padding: 0.5rem 1rem;
+  display: inline;
+}
+
+.navbar-menu a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #4a90e2;
+  border-radius: 5px;
+}
+
+.clan-image {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* fa Icon adjustments */
+.navbar-menu i {
+  color: black;
+  margin-right: 0.5rem;
+}
+
+/* --------------------------------------------------- Main content-------------------------------------------- */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* banner container */
+.slide-div {
+  display: flex;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* banner  */
+.straight-video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------------ Middle content --------------------------------------------- */
+.content-div {
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title-container span {
+  font-size: 4rem;
+  color: black;
+  font-family: Papyrus, fantasy;
+  font-weight: bolder;
+  text-shadow: 2px 2px 4px #000000;
+  position: relative;
+  opacity: 0;
+}
+
+/* -------------------- Animations --------------------------------------- */
+.animate-slam1 {
+  animation: slam 1s ease-out forwards;
+}
+
+@keyframes slam {
+  0% {
+    transform: scale(0.5) translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(20%);
+    opacity: 1;
+  }
+}
+
+@keyframes slam-left-to-right {
+  0% {
+    transform: translateX(-100%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-slam2 {
+  animation: slam-left-to-right 1s ease-in backwards;
+}
+
+/* ------------------------------------Card Styles--------------------------------------------- */
+.players-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10vw;
+  margin-top: 5vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.216);
+  margin: 2px;
+  margin-left: 8vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.name-input input {
+  width: 80%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.rating .fa-star {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-right: 5px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.stats table {
+  width: 100%;
+  margin-top: 10px;
+  border-style: dotted;
+}
+
+.stats table th,
+.stats table td {
+  padding: 5px;
+  text-align: center;
+}
+
+.stats table th {
+  color: #333;
+}
+
+/* ------------------------------------Responsive Styles--------------------------------------------- */
+/* For tablets and small screens */
+@media (max-width: 768px) {
+  .navbar {
+    height: 10vh;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .navbar-brand {
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-brand span {
+    font-size: 1.5rem;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .navbar-menu a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .clan-image {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .navbar {
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .navbar-brand span {
+    font-size: 1.2rem;
+  }
+
+  .navbar-menu {
+    gap: 0.5rem;
+  }
+
+  .navbar-menu a {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .clan-image {
+    height: 30px;
+    width: 30px;
+  }
+
+  .title-container span {
+    font-size: 3rem;
+  }
+}
+
+/* Card's Responsive Styles */
+/* For tablets and small screens */
+@media (max-width: 768px) {
+  .card {
+    width: 80vw;
+    height: 25vh;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .card {
+    width: 90vw;
+    height: 30vh;
+  }
+
+  .stats span {
+    font-size: 0.8rem;
+  }
+
+  .stats th,
+  .stats td {
+    font-size: 0.8rem;
+  }
+}
